@@ -27,7 +27,7 @@ import com.qualcomm.robotcore.util.Range;
 public class TeachersOpMode extends OpMode
 {
     // Declare OpMode members.
-    private ElapsedTime runtime = new ElapsedTime();
+    private final ElapsedTime runtime = new ElapsedTime();
     private DcMotor leftDrive = null;
     private DcMotor rightDrive = null;
     private DcMotor height = null;
@@ -56,6 +56,8 @@ public class TeachersOpMode extends OpMode
         leftDrive.setDirection(DcMotor.Direction.FORWARD);
         rightDrive.setDirection(DcMotor.Direction.REVERSE);
         height.setDirection(DcMotor.Direction.FORWARD);
+
+        claw.setPosition(0.0);
 
         // Tell the driver that initialization is complete.
         telemetry.addData("Status", "Initialized");
@@ -115,7 +117,7 @@ public class TeachersOpMode extends OpMode
             toggleServo(up);
         }
         // Show the elapsed game time and wheel power.
-        telemetry.addData("Status", "Run Time: " + runtime.toString());
+        telemetry.addData("Status", "Run Time: " + runtime);
         telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
     }
 
