@@ -11,9 +11,8 @@ public class Claw {
     private double upPosition = 0;
     private double targetClawPosition = 0;
     private double targetUpPosition = 0;
-    private Servo up = null;
-    private Servo claw = null;
-    private double speed = .0005;
+    private final Servo up;
+    private final Servo claw;
 
     public void setClawPosition(double pos){
         //targetClawPosition = pos;
@@ -46,10 +45,16 @@ public class Claw {
     // }
 
     public void update(){
+        double speed = .0005;
         if (targetClawPosition > getClawPosition()){
             setClawPosition(getClawPosition() + speed);
         }else if (targetClawPosition < getClawPosition()){
             setClawPosition(getClawPosition() - speed);
+        }
+        if (targetUpPosition > getUpPosition()){
+            setUpPosition(getUpPosition() + speed);
+        }else if (targetUpPosition < getUpPosition()){
+            setUpPosition(getUpPosition() - speed);
         }
     }
 }

@@ -29,8 +29,6 @@ public class GoodOpMode extends OpMode
     private MyMotor leftDrive = null;
     private MyMotor rightDrive = null;
     // Setup a variable for each drive wheel to save power level for telemetry
-    private double leftPower;
-    private double rightPower;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -73,8 +71,8 @@ public class GoodOpMode extends OpMode
         // - This uses basic math to combine motions and is easier to drive straight.
         double drive = -gamepad1.left_stick_y;
         double turn  =  gamepad1.right_stick_x;
-        leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
-        rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
+        double leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
+        double rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
 
         // Tank Mode uses one stick to control each wheel.
         // - This requires no math, but it is hard to drive forward slowly and keep straight.
