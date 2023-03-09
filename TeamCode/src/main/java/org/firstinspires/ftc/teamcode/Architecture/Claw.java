@@ -16,19 +16,19 @@ public class Claw {
     private double speed = .0005;
 
     public void setClawPosition(double pos){
-        targetClawPosition = pos;
+        //targetClawPosition = pos;
         clawPosition = pos;
         claw.setPosition(clawPosition);
     }
     public void setUpPosition(double pos){
-        targetUpPosition = pos;
+        //targetUpPosition = pos;
         upPosition = pos;
         up.setPosition(upPosition);
     }
     public void setTargetClawPosition(double pos){
         targetClawPosition = pos;
     }
-    public void setTargetUpPostion(double pos){
+    public void setTargetUpPosition(double pos){
         targetUpPosition = pos;
     }
     public double getUpPosition(){

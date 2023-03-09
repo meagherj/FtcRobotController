@@ -63,6 +63,8 @@ public class TeachersOpMode extends OpMode
 
         c.setClawPosition(0);
         c.setUpPosition(0);
+        c.setTargetClawPosition(0);
+        c.setTargetUpPosition(0);
 
         // Tell the driver that initialization is complete.
         telemetry.addData("Status", "Initialized");
